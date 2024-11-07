@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import userToken from "./UserToken.js";
 
 const Schema = mongoose.Schema;
 

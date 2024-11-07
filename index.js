@@ -3,9 +3,6 @@ import { config } from "dotenv";
 import dbConnect from './dbConnect1.js';
 import authRoutes from './routes/auth.js';
 
-
-
-
 const app = express();
 
 config();

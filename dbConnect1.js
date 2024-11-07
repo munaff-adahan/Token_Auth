@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const dbConnect = () => {
-    const connectionParams = { useNewUrlParser: true };
+    const connectionParams = { useNewUrlParser: true, useUnifiedTopology: true };
     mongoose.connect(process.env.DB, connectionParams);
 
     mongoose.connection.on("connected", () => {

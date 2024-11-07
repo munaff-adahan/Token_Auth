@@ -1,5 +1,5 @@
 import { Router } from "express";
-import User from "../models/User";
+import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import { signUpBodyValidation, loginBodyValidation } from "../utils/ValidationsSchema.js";
 import generateTokens from "../utils/generateTokens.js";
