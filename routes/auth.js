@@ -51,6 +51,7 @@ router.post("/login", async (req, res) => {
                 .json({ error: true, message: error.details[0].message });
 
         const user = await User.findOne({ email: req.body.email });
+        console.log(user)
         if (!user)
             return res
                 .status(401)
@@ -61,6 +62,7 @@ router.post("/login", async (req, res) => {
             return res
                 .status(401)
                 .json({ error: true, message: "Invalid Email or Password" });
+
         ///Generate access and Refresh Token 
 
         const { accessToken, refreshToken } = await generateTokens(user);
@@ -69,7 +71,7 @@ router.post("/login", async (req, res) => {
             error: false,
             accessToken,
             refreshToken,
-            message: "Loged in Successfully"
+            message: "Logged in Successfully"
         });
     } catch (error) {
         console.log(error);
